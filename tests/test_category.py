@@ -52,3 +52,8 @@ def test_category(
     assert second_category.product_count == 5
 
     assert third_category.product_count == 5
+
+
+def test_get_product_list(first_category, second_category):
+    assert first_category.get_product_list == "Samsung, 180000.0. Остаток: 5 шт.\nIphone, 15 155.87 руб. Остаток: 8 шт.\n55 QLED 4K, 123000.0. Остаток: 7 шт. \n"
+
