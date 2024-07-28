@@ -1,6 +1,8 @@
 from typing import Any
 
 from src.products import Product
+
+
 class Category:
     name: str
     description: str
@@ -8,12 +10,12 @@ class Category:
     category_count = 0
     product_count = 0
 
-    def __init__(self, name, description,products):
+    def __init__(self, name, description, products):
         self.name = name
         self.description = description
         self.__products = products
-        Category.product_count += 1
-        Category.category_count += len(products)
+        Category.product_count += len(products)
+        Category.category_count += 1
 
     def add_product(self, product: Product) -> Any:
         self.__products.append(product)
@@ -21,18 +23,14 @@ class Category:
 
     @property
     def get_product_list(self) -> str:
-        product_str = ""
+        product_list = ""
         for i in self.__products:
-            product_str += f"{i.name}, {i.price} руб. Остаток: {i.quantity}."
-        return product_str
-
-
+            product_list += f"{i.name}, {i.price} руб. Остаток: {i.quantity} шт.\n"
+        return product_list
 
 
 if __name__ == "__main__":
-    product1 = Product(
-        "Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5
-    )
+    product1 = Product("Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5)
     product2 = Product("Iphone 15", "512GB, Gray space", 210000.0, 8)
     product3 = Product("Xiaomi Redmi Note 11", "1024GB, Синий", 31000.0, 14)
 

@@ -1,7 +1,7 @@
 class Product:
     name = str
     description = str
-    price = int
+    price = float
     quantity = int
 
     def __init__(self, name, description, price, quantity):
@@ -9,7 +9,6 @@ class Product:
         self.description = description
         self.__price = price
         self.quantity = quantity
-
 
     @classmethod
     def new_product(cls, new_product: dict):
@@ -21,16 +20,12 @@ class Product:
         return cls(name, description, price, quantity)
 
     @property
-    def get_products(self):
-        #return f"{self.name} {self.description} {self.__price} {self.quantity}"
+    def price(self):
         return self.__price
-    @get_products.setter
-    def get_products(self, new_price):
-        if self.__price <= 0:
+
+    @price.setter
+    def price(self, new_price):
+        if new_price <= 0:
             print("Цена не должна быть нулевая или отрицательная")
         else:
             self.__price = new_price
-
-
-
-
