@@ -23,7 +23,7 @@ class Category:
     def get_product_list(self) -> str:
         product_str = ""
         for i in self.__products:
-            product_str += f"{i.name}, {i.price}. Остаток: {i.quantity}."
+            product_str += f"{i.name}, {i.price} руб. Остаток: {i.quantity}."
         return product_str
 
 

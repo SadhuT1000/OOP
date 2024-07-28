@@ -22,8 +22,8 @@ class Product:
 
     @property
     def get_products(self):
-        return f"{self.name} {self.description} {self.__price} {self.quantity}"
-        #return self.__price
+        #return f"{self.name} {self.description} {self.__price} {self.quantity}"
+        return self.__price
     @get_products.setter
     def get_products(self, new_price):
         if self.__price <= 0:
