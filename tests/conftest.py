@@ -2,6 +2,7 @@ import pytest
 
 from src.category import Category
 from src.products import Product
+from src.tast_iterator import TaskIterator
 
 
 @pytest.fixture
@@ -76,3 +77,17 @@ def third_category(fourth_product):
         description="Современный телевизор, который позволяет наслаждаться просмотром, станет вашим другом и помощником",
         products=[fourth_product],
     )
+
+
+@pytest.fixture
+def all_sum1(first_product, second_product):
+    return 2580000.0
+
+@pytest.fixture
+def all_sum2(first_product, third_product):
+    return 1334000.0
+
+
+@pytest.fixture
+def taskiterator(first_category):
+    return TaskIterator(first_category)
