@@ -1,29 +1,30 @@
-
 from src.products import Product
 from src.category import Category
+
+
 class TaskIterator:
 
-    def __int__(self, prod):
+    def __init__(self, prod):
         self.category = prod
         self.index = 0
-    def __index__(self):
+
+    def __iter__(self):
         self.index = 0
         return self
 
     def __next__(self):
-        if self.index < len(self.category.get_product_list):
-            new = self.category.get_product_list[self.index]
+        if self.index < len(self.category.list_prod):
+            new = self.category.list_prod[self.index]
             self.index += 1
             return new
         else:
             return StopIteration
 
 
-if __name__=="__main__":
+if __name__ == "__main__":
     product1 = Product("Samsung Galaxy S23 Ultra", "256GB, Серый цвет, 200MP камера", 180000.0, 5)
     product2 = Product("Iphone 15", "512GB, Gray space", 210000.0, 8)
     product3 = Product("Xiaomi Redmi Note 11", "1024GB, Синий", 31000.0, 14)
-
 
     category1 = Category(
         "Смартфоны",
@@ -31,6 +32,5 @@ if __name__=="__main__":
         [product1, product2, product3])
 
     iterator = TaskIterator(category1)
-
     for i in iterator:
         print(i)

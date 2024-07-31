@@ -24,7 +24,9 @@ class Category:
         self.__products.append(product)
         Category.product_count += 1
 
-
+    @property
+    def list_prod(self):
+        return self.__products
     @property
     def get_product_list(self) -> str:
         product_list = ""
@@ -50,7 +52,7 @@ if __name__ == '__main__':
 
     print(str(category1))
 
-    #print(category1.products) # Если тут пишу get_product_list то работает норм
+    print(category1.products) # Если тут пишу get_product_list то работает норм
 
     print(product1 + product2)
     print(product1 + product3)
