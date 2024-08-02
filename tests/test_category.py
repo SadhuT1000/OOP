@@ -37,3 +37,14 @@ def test_get_product_list(first_category, second_category):
         "Iphone 15, 210000.0 руб. Остаток: 8 шт..\n"
         "55 QLED 4K, 123000.0 руб. Остаток: 7 шт..\n"
     )
+
+
+def test_TaskIterator(taskiterator):
+    iter(taskiterator)
+    assert taskiterator.index == 0
+    assert next(taskiterator).name == "Samsung"
+    assert next(taskiterator).name == "Iphone 15"
+    assert next(taskiterator).name == "55 QLED 4K"
+
+    with pytest.raises(StopIteration):
+        next(taskiterator)

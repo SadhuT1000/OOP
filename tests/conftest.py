@@ -83,6 +83,7 @@ def third_category(fourth_product):
 def all_sum1(first_product, second_product):
     return 2580000.0
 
+
 @pytest.fixture
 def all_sum2(first_product, third_product):
     return 1334000.0

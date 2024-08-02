@@ -1,5 +1,5 @@
-from src.products import Product
 from src.category import Category
+from src.products import Product
 
 
 class TaskIterator:
@@ -18,7 +18,7 @@ class TaskIterator:
             self.index += 1
             return new
         else:
-            return StopIteration
+            raise StopIteration
 
 
 if __name__ == "__main__":
@@ -29,7 +29,8 @@ if __name__ == "__main__":
     category1 = Category(
         "Смартфоны",
         "Смартфоны, как средство не только коммуникации, но и получения дополнительных функций для удобства жизни",
-        [product1, product2, product3])
+        [product1, product2, product3],
+    )
 
     iterator = TaskIterator(category1)
     for i in iterator:
