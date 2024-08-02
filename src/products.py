@@ -1,3 +1,4 @@
+
 class Product:
     name = str
     description = str
@@ -30,6 +31,7 @@ class Product:
     @property
     def price(self):
         return self.__price
+
 
     @price.setter
     def price(self, new_price):
