@@ -20,6 +20,12 @@ class Category:
     def __str__(self):
         return f"{self.name}, количество продуктов: {len(self.__products)} шт.\n"
 
+
+    def __add__(self, other):
+        # return (self.__products * self.product_count) + (other.__products * other.product_count)
+
+        return (self.__products * self.quantity) + (other.__products * other.quantity)
+
     def add_product(self, product: Product) -> Any:
         self.__products.append(product)
         Category.product_count += 1
@@ -53,8 +59,7 @@ if __name__ == "__main__":
 
     print(str(category1))
 
-    print(category1.get_product_list)  # Если тут пишу get_product_list то работает норм
-
-    print(product1 + product2)
-    print(product1 + product3)
-    print(product2 + product3)
+    # print(category1.get_product_list)
+    # print(product1 + product2)
+    # print(product1 + product3)
+    # print(product2 + product3)

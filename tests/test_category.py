@@ -28,6 +28,8 @@ def test_category(first_category, first_product, third_product, second_product, 
 
     assert second_category.product_count == 5
 
+def test_category_str(first_category):
+    assert str(first_category) == "Смартфоны, количество продуктов: 3 шт.\n"
 
 def test_get_product_list(first_category, second_category):
     with pytest.raises(AttributeError):
