@@ -31,6 +31,12 @@ class Category:
 
         return (self.__products * self.quantity) + (other.__products * other.quantity)
 
+
+    def __add__(self, other):
+        # return (self.__products * self.product_count) + (other.__products * other.product_count)
+
+        return (self.__products * self.quantity) + (other.__products * other.quantity)
+
     def add_product(self, product: Product) -> Any:
         self.__products.append(product)
         Category.product_count += 1
