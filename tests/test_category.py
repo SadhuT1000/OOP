@@ -28,8 +28,10 @@ def test_category(first_category, first_product, third_product, second_product, 
 
     assert second_category.product_count == 5
 
+
 def test_category_str(first_category):
-    assert str(first_category) == "Смартфоны, количество продуктов: 3 шт.\n"
+    assert str(first_category) == "Смартфоны, количество продуктов: 20 шт."
+
 
 def test_get_product_list(first_category, second_category):
     with pytest.raises(AttributeError):
@@ -39,6 +41,15 @@ def test_get_product_list(first_category, second_category):
         "Iphone 15, 210000.0 руб. Остаток: 8 шт..\n"
         "55 QLED 4K, 123000.0 руб. Остаток: 7 шт..\n"
     )
+
+
+def test_add_error(first_category):
+    with pytest.raises(TypeError):
+        first_category.add_product(1)
+
+
+def test_add_smartphone(first_category, smartphone1):
+    first_category.add_product = smartphone1
 
 
 def test_TaskIterator(taskiterator):

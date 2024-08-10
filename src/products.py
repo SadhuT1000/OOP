@@ -1,4 +1,3 @@
-
 class Product:
     name = str
     description = str
@@ -25,13 +24,18 @@ class Product:
 
     def __add__(self, other):
         # return (self.__products * self.product_count) + (other.__products * other.product_count)
+        # if type(other) is Product:
+        #     return (self.__price * self.quantity) + (other.__price * other.quantity)
+        if isinstance(other, self.__class__):
+            return self.__price * self.quantity + other.__price * other.quantity
+        else:
+            raise TypeError
 
-        return (self.__price * self.quantity) + (other.__price * other.quantity)
+        # raise TypeError
 
     @property
     def price(self):
         return self.__price
-
 
     @price.setter
     def price(self, new_price):

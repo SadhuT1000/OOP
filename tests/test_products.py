@@ -1,4 +1,3 @@
-
 def tests_products(first_product, second_product, third_product, fourth_product):
     assert first_product.name == "Samsung"
     assert first_product.description == "256GB, Серый цвет, 200MP камера"
