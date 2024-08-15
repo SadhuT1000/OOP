@@ -1,5 +1,7 @@
 import pytest
 
+from src.category import Category
+
 
 def test_category(first_category, first_product, third_product, second_product, second_category, third_category):
 
@@ -61,3 +63,18 @@ def test_TaskIterator(taskiterator):
 
     with pytest.raises(StopIteration):
         next(taskiterator)
+
+
+def test_middle_price(without_product):
+
+    category1 = Category(name="test", description="test", products=[])
+    result = category1.middle_price()
+    assert result == 0
+
+    category2 = Category(name="test", description="test", products=without_product)
+    assert category2.middle_price() == 111629.63
+
+
+# def test_custom_exception(capsys, first_product):
+#
+#     assert len(first_product.quantity) == 8
